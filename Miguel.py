@@ -30,7 +30,7 @@ def funcion_prueba(peso=0.5, color_especial_arista='red', color_normal_arista='b
     nx.write_graphml(G, "grafo_prueba.graphml")
 
 def main():
-    st.title('Aplicación de prueba')
+    st.title('Agregue sus propios parámetros')
     peso = st.slider('**Peso**', min_value=0.0, max_value=1.0, value=0.5, step=0.01, format='') # Step is float
     color_especial_arista = st.color_picker('**Color especial arista**', value='#00FFAA')
     color_normal_arista = st.color_picker('**Color normal arista**', value='#00FFAA')
