@@ -31,21 +31,20 @@ def funcion_prueba(peso=0.5, color_especial_arista='red', color_normal_arista='b
 
 def main():
     st.title('Aplicación de prueba')
-    st.markdown("<h3 style='text-align: center; font-weight: bold;'>Peso</h3>", unsafe_allow_html=True)
-    peso = st.slider(' ', min_value=0.0, max_value=1.0, value=0.5, step=0.01) # Step is float
-    color_especial_arista = st.color_picker('Color especial arista', value='#00FFAA')
-    color_normal_arista = st.color_picker('Color normal arista', value='#00FFAA')
-    tamaño_letra = st.slider('Tamaño Fuente', min_value=1, max_value=20, value=8, step=1) # Step is integer
-    width = st.slider('Ancho figura', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
-    height = st.slider('Alto figura', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
+    peso = st.slider('<b>Peso</b>', min_value=0.0, max_value=1.0, value=0.5, step=0.01) # Step is float
+    color_especial_arista = st.color_picker('<b>Color especial arista</b>', value='#00FFAA')
+    color_normal_arista = st.color_picker('<b>Color normal arista</b>', value='#00FFAA')
+    tamaño_letra = st.slider('<b>Tamaño Fuente</b>', min_value=1, max_value=20, value=8, step=1) # Step is integer
+    width = st.slider('<b>Ancho figura</b>', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
+    height = st.slider('<b>Alto figura</b>', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
 
-    if st.button('Crear el Grafo'):
+    if st.button('<b>Crear el Grafo</b>'):
         G = funcion_prueba(peso, color_especial_arista, color_normal_arista, tamaño_letra, (width, height))
         buffer = io.BytesIO()
         nx.write_graphml(G, buffer)
         buffer.seek(0)
         b64 = base64.b64encode(buffer.read()).decode()
-        href = f'<a href="data:application/octet-stream;base64,{b64}" download="graph.graphml">Descargar el Grafo en un archivo</a>'
+        href = f'<a href="data:application/octet-stream;base64,{b64}" download="graph.graphml"><b>Descargar el Grafo en un archivo</b></a>'
         st.markdown(href, unsafe_allow_html=True)
 
 if __name__ == "__main__":
