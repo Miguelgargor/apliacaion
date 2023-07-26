@@ -38,7 +38,7 @@ def main():
     width = st.slider('**Ancho figura**', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
     height = st.slider('**Alto figura**', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
 
-    if st.button('**Crear el Grafo**', bg_color='#87CEEB'):
+    if st.button('**Crear el Grafo**'):
         G = funcion_prueba(peso, color_especial_arista, color_normal_arista, tamaño_letra, (width, height))
         buffer = io.BytesIO()
         nx.write_graphml(G, buffer)
