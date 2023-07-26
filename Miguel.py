@@ -7,6 +7,12 @@ import networkx as nx
 import io
 import base64
 
+
+# Cambiar el título de la pestaña del navegador y añadir icono: (TÍTULO, URL ICONO (Subido a GitHub))
+st.set_page_config(page_title="HOLA", page_icon='https://github.com/Miguelgargor/apliacaion/blob/main/Imagen1.png', layout="centered", initial_sidebar_state="auto")
+
+
+
 def funcion_prueba(peso=0.5, color_especial_arista='red', color_normal_arista='black', tamaño_letra=8, tamaño_fig= (1,1)):
     # Create a graph
     G = nx.Graph()
@@ -29,8 +35,8 @@ def main():
     color_especial_arista = st.color_picker('Color especial arista', value='#00FFAA')
     color_normal_arista = st.color_picker('Color normal arista', value='#00FFAA')
     tamaño_letra = st.slider('Tamaño Fuente', min_value=1, max_value=20, value=8, step=1) # Step is integer
-    width = st.slider('Ancho figura', min_value=1, max_value=5, value=1, step=1) # Step is integer
-    height = st.slider('Alto figura', min_value=1, max_value=5, value=1, step=1) # Step is integer
+    width = st.slider('Ancho figura', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
+    height = st.slider('Alto figura', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
 
     if st.button('Crear el Grafo'):
         G = funcion_prueba(peso, color_especial_arista, color_normal_arista, tamaño_letra, (width, height))
