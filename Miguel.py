@@ -9,7 +9,8 @@ import base64
 
 
 # Cambiar el título de la pestaña del navegador y añadir icono: (TÍTULO, URL ICONO (Subido a GitHub))
-st.set_page_config(page_title="HOLA", page_icon='https://github.com/Miguelgargor/apliacaion/blob/main/Imagen1.png', layout="centered", initial_sidebar_state="auto")
+URL_ICONO= 'https://raw.githubusercontent.com/Miguelgargor/apliacaion/main/Imagen1.png'
+st.set_page_config(page_title="HOLA", page_icon=URL_ICONO, layout="centered", initial_sidebar_state="auto")
 
 
 
