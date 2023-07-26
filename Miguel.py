@@ -31,15 +31,14 @@ def funcion_prueba(peso=0.5, color_especial_arista='red', color_normal_arista='b
 
 def main():
     st.title('Aplicación de prueba')
-    #st.markdown("<b>Peso</b>", unsafe_allow_html=True)
-    peso = st.slider('Peso', min_value=0.0, max_value=1.0, value=0.5, step=0.01, format='') # Step is float
-    color_especial_arista = st.color_picker('Color especial arista', value='#00FFAA')
-    color_normal_arista = st.color_picker('Color normal arista', value='#00FFAA')
-    tamaño_letra = st.slider('Tamaño Fuente', min_value=1, max_value=20, value=8, step=1) # Step is integer
-    width = st.slider('Ancho figura', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
+    peso = st.slider('**Peso**', min_value=0.0, max_value=1.0, value=0.5, step=0.01, format='') # Step is float
+    color_especial_arista = st.color_picker('**Color especial arista**', value='#00FFAA')
+    color_normal_arista = st.color_picker('**Color normal arista**', value='#00FFAA')
+    tamaño_letra = st.slider('**Tamaño Fuente**', min_value=1, max_value=20, value=8, step=1) # Step is integer
+    width = st.slider('**Ancho figura**', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
     height = st.slider('**Alto figura**', min_value=1.0, max_value=16.0, value=1.0, step=0.1) # Step is float
 
-    if st.button('Crear el Grafo'):
+    if st.button('**Crear el Grafo**', bg_color='#87CEEB'):
         G = funcion_prueba(peso, color_especial_arista, color_normal_arista, tamaño_letra, (width, height))
         buffer = io.BytesIO()
         nx.write_graphml(G, buffer)
